@@ -47,15 +47,3 @@ mark_as_closed('Entry3');
 mark_as_closed('Entry7');
 mark_as_closed('Entry10');
 
-# Check Updated Action Logs
-print "\nAfter Marking Entries as Closed:\n";
-display_action_logs();
-
-# Simulating an Inconsistent Scenario
-print "\nSimulating Inconsistent Behavior...\n";
-$action_logs{total_count} = $action_logs{total_count}; # Deliberately not updating count
-print "Updated Total Count without proper logic.\n";
-
-# Final Status
-display_action_logs();
-

@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 
-# Subroutine to read a file and return lines
 sub read_file {
     my ($file_name) = @_;
     open my $fh, '<', $file_name or die "Cannot open file: $!";
@@ -10,14 +9,13 @@ sub read_file {
     return @lines;
 }
 
-# Subroutine to count words in a line
 sub count_words {
     my ($line) = @_;
     my @words = split /\s+/, $line;
     return scalar @words;
 }
 
-# Subroutine to count unique words
+
 sub count_unique_words {
     my ($lines_ref) = @_;
     my %word_count;
@@ -31,7 +29,6 @@ sub count_unique_words {
     return %word_count;
 }
 
-# Subroutine to write results to a file
 sub write_results {
     my ($file_name, $data_ref) = @_;
     open my $fh, '>', $file_name or die "Cannot open file: $!";
@@ -41,7 +38,6 @@ sub write_results {
     close $fh;
 }
 
-# Main Program
 print "Enter the input file name: ";
 my $input_file = <STDIN>;
 chomp $input_file;
